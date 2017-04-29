@@ -13,7 +13,7 @@ public class MenuScreen extends Screen {
 
     public MenuScreen(GameScreenManager gameScreenManager) {
         super(gameScreenManager);
-        menuTexture = new Texture("menubg.png");
+        create();
     }
 
     @Override
@@ -38,6 +38,11 @@ public class MenuScreen extends Screen {
         spriteBatch.begin();
         spriteBatch.draw(menuTexture, 0,0, GameScreenManager.WIDTH, GameScreenManager.HEIGHT);
         spriteBatch.end();
+    }
+
+    @Override
+    public void create() {
+        menuTexture = new Texture("menubg.png");
     }
 
     @Override

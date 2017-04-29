@@ -1,6 +1,7 @@
 package com.deli.tictactoe.screens;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.deli.tictactoe.model.GameLogicModel;
 import com.deli.tictactoe.utils.Observer;
 
 import java.util.Stack;
@@ -25,15 +26,6 @@ public class GameScreenManager implements Observer {
         screens.push(screen);
     }
 
-    public Screen peek() {
-        return screens.peek();
-    }
-
-    public void set(Screen screen) {
-        screens.pop();
-        screens.push(screen);
-    }
-
     public void update(float deltaTime) {
         screens.peek().update(deltaTime);
     }
@@ -44,6 +36,11 @@ public class GameScreenManager implements Observer {
 
     @Override
     public void execute() {
+        screens.push(new ResultScreen(this));
+    }
 
+    public void clear() {
+        while (!screens.empty())
+            screens.pop().dispose();
     }
 }

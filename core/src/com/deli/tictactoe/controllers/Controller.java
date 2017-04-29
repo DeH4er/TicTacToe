@@ -8,11 +8,9 @@ import com.deli.tictactoe.screens.Screen;
  * Created by denys on 29.04.17.
  */
 public class Controller {
-    Screen screen;
-    GameLogicModel model;
+    private GameLogicModel model;
 
-    public Controller(Screen screen, GameLogicModel model) {
-        this.screen = screen;
+    public Controller(GameLogicModel model) {
         this.model = model;
     }
 

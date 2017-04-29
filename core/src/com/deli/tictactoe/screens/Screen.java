@@ -28,5 +28,6 @@ public abstract class Screen {
     public abstract void handleInput();
     public abstract void update(float dt);
     public abstract void render(SpriteBatch spriteBatch);
+    public abstract void create();
     public abstract void dispose();
 }
