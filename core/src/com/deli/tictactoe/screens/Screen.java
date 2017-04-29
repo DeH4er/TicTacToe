@@ -3,6 +3,8 @@ package com.deli.tictactoe.screens;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import com.deli.tictactoe.utils.Observer;
+
 /**
  * Created by denys on 29.04.17.
  */

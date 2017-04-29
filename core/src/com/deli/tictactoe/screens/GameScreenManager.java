@@ -1,11 +1,16 @@
 package com.deli.tictactoe.screens;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.deli.tictactoe.utils.Observer;
+
 import java.util.Stack;
 
 /**
  * Created by denys on 29.04.17.
  */
-public class GameScreenManager {
+public class GameScreenManager implements Observer {
+    public static final int WIDTH = 480;
+    public static final int HEIGHT = 480;
     private Stack<Screen> screens;
 
     public GameScreenManager() {
@@ -29,4 +34,16 @@ public class GameScreenManager {
         screens.push(screen);
     }
 
+    public void update(float deltaTime) {
+        screens.peek().update(deltaTime);
+    }
+
+    public void render(SpriteBatch batch) {
+        screens.peek().render(batch);
+    }
+
+    @Override
+    public void execute() {
+
+    }
 }
