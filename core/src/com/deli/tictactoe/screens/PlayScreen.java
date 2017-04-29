@@ -19,7 +19,6 @@ public class PlayScreen extends Screen {
     private Controller controller;
     private GameLogicModel model;
     private Player[][] board;
-    private SpriteBatch spriteBatchRef;
 
     public PlayScreen(GameScreenManager gameScreenManager) {
         super(gameScreenManager);
@@ -56,7 +55,6 @@ public class PlayScreen extends Screen {
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        spriteBatchRef = spriteBatch;
         spriteBatch.begin();
         spriteBatch.draw(bg, 0, 0);
 
