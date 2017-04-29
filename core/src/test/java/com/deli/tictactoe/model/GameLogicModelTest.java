@@ -1,5 +1,7 @@
 package com.deli.tictactoe.model;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -7,5 +9,27 @@ import static org.junit.Assert.*;
  */
 public class GameLogicModelTest {
 
+    @Test
+    public void moveTestPlayer1Move() {
+        GameLogicModel gameLogicModel = new GameLogicModel();
+        gameLogicModel.move(Player.PLAYER_1, 1, 1);
+        assertEquals(Player.PLAYER_2, gameLogicModel.getShouldMove());
+    }
+
+    @Test
+    public void moveTestPlayer2Move() {
+        GameLogicModel gameLogicModel = new GameLogicModel();
+        gameLogicModel.move(Player.PLAYER_2, 1, 1);
+        assertEquals(Player.PLAYER_1, gameLogicModel.getShouldMove());
+    }
+
+
+    @Test
+    public void moveTestDoubleMoveToOneCell() {
+        GameLogicModel gameLogicModel = new GameLogicModel();
+        gameLogicModel.move(Player.PLAYER_1, 1, 1);
+        gameLogicModel.move(Player.PLAYER_1, 1, 1);
+        assertEquals(Player.PLAYER_2, gameLogicModel.getShouldMove());
+    }
 
 }
